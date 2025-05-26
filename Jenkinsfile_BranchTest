@@ -7,7 +7,7 @@ pipeline{
         expression{ return params.Environment == 'main' }
       }
       steps {
-         mail to: 'chaithrab12@gmail.com',
+         mail to: 'chaigowda42@gmail.com',
          subject : "Approve production deployment",
          body: """ Hello,
          Approve the deployment , click on the link {$env.BUILD_URL}
