@@ -14,16 +14,16 @@ pipeline{
         }
       
 
-       when{
-          expression{
-            param.Environment == PROD
-          }
-        }
-      steps {
-          git url: 'https://github.com/chaithrab12/Jenkins_CICD',
-          branch: 'main'
-        }
-      }
+      //  when{
+      //     expression{
+      //       param.Environment == PROD
+      //     }
+      //   }
+      // steps {
+      //     git url: 'https://github.com/chaithrab12/Jenkins_CICD',
+      //     branch: 'main'
+      //   }
+      // }
   
 
     stage('Build'){
