@@ -3,14 +3,14 @@ pipeline{
   stages{
     stage('checkout'){
     
-        when{
-          expression{
-            ${params.Environment} == 'Dev'
-          }
-        }
+        // when{
+        //   expression{
+        //     params.Environment == 'Dev'
+        //   }
+        // }
       steps {
           git url: 'https://github.com/chaithrab12/Jenkins_CICD',
-          branch: 'dev'
+          branch: ${params.Environment}
         }
       
 
