@@ -22,7 +22,7 @@ pipeline{
       }
       steps {
          script {
-            input message: "Approve deployment to production?", ok: "Deploy"
+            input message: "Approve deployment to production?", ok: "Deploy" , submitter: "chaigowda42@gmail.com"
           }
           
           git url: 'https://github.com/chaithrab12/Jenkins_CICD',
