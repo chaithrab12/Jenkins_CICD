@@ -5,7 +5,7 @@ pipeline{
     
         when{
           expression{
-            ${param.Environment} == 'Dev'
+            ${params.Environment} == 'Dev'
           }
         }
       steps {
