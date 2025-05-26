@@ -1,0 +1,32 @@
+pipeline{
+  agent any
+  stages{
+    stage('checkout_main'){
+      when{
+        expression{ return params.Environment == 'main' }
+      }
+      steps {
+          git url: 'https://github.com/chaithrab12/Jenkins_CICD',
+          branch: "${params.Environment}"
+        }
+    }
+
+    stage('checkout_dev'){
+      when{
+        expression{ return params.Environment == 'dev' }
+      }
+      steps {
+          git url: 'https://github.com/chaithrab12/Jenkins_CICD',
+          branch: "${params.Environment}"
+        }
+    }
+
+    
+    stage('Build'){
+      steps{
+        sh 'python3 Test.py'
+      }
+    }
+
+  }   
+}
