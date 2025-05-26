@@ -3,29 +3,11 @@ pipeline{
   stages{
     stage('checkout'){
     
-        // when{
-        //   expression{
-        //     params.Environment == 'Dev'
-        //   }
-        // }
       steps {
           git url: 'https://github.com/chaithrab12/Jenkins_CICD',
           branch: "${params.Environment}"
         }
-      
-
-      //  when{
-      //     expression{
-      //       param.Environment == PROD
-      //     }
-      //   }
-      // steps {
-      //     git url: 'https://github.com/chaithrab12/Jenkins_CICD',
-      //     branch: 'main'
-      //   }
-      }
     
-
     stage('Build'){
       steps{
         sh 'python3 Test.py'
